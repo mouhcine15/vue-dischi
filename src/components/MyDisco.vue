@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <img :src="dischiObject.poster" alt="">
-        <div>{{dischiObject.author}}</div>
+    <div class="disco">
+        <div>{{dischiOggetto.title}}</div>
     </div>
 </template>
 
@@ -9,14 +8,14 @@
 export default {
   name: 'MyDisco',
   props: {
-      dischiObject: Object,
+      dischiOggetto: Object
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    div {
-        background-color: aqua;
+    #disco {
+        background-color: rgb(38, 255, 0);
     }
 </style>

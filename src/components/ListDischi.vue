@@ -26,7 +26,7 @@ export default {
   created() {
       axios.get(this.apiUrl)
       .then(result => {
-          this.dischi = result.data
+          this.dischi = result.data.response;
           console.log(result);
       })
   }
