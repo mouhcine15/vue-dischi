@@ -1,6 +1,7 @@
 <template>
     <div class="disco">
-        <div>{{dischiOggetto.title}}</div>
+        <img :src="dischiObject.poster" alt="">
+        <div>{{dischiObject.title}}</div>
     </div>
 </template>
 
@@ -8,7 +9,7 @@
 export default {
   name: 'MyDisco',
   props: {
-      dischiOggetto: Object
+      dischiObject: Array
   }
 }
 </script>
