@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <MyMain/>
+    <ListDischi/>
   </div>
 </template>
 
 <script>
-import MyMain from './components/MyMain.vue'
+import ListDischi from './components/ListDischi.vue'
 
 export default {
   name: 'App',
   components: {
-    MyMain,
+    ListDischi
 }
 }
 </script>
