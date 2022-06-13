@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div>
+            <MySearch/>
+        </div>
         <MyDisco
             v-for="(element, i) in dischi" 
             :key="i"
@@ -11,11 +14,13 @@
 <script>
 import axios from "axios"
 import MyDisco from "./MyDisco.vue"
+import MySearch from "./MySearch.vue"
 
 export default {
   name: 'ListDischi',
   components: {
-    MyDisco
+    MyDisco,
+    MySearch
 },
   data () {
       return {

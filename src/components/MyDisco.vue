@@ -19,7 +19,7 @@
 export default {
   name: 'MyDisco',
   props: {
-      dischiObject: Array
+      dischiObject: Object
   }
 }
 </script>
