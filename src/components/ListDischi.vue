@@ -1,13 +1,18 @@
 <template>
-    <div class="container">
-        <div>
-            <MySearch @selected="selectUser"/>
+    <div>
+        <div id="selector">
+            <div>
+                <MySearch @selected="selectUser"/>
+
+            </div>
         </div>
-        <MyDisco
-            v-for="(element, i) in filtroGeneri" 
-            :key="i"
-            :dischiObject="element"
-        />
+        <div class="container">
+            <MyDisco
+                v-for="(element, i) in filtroGeneri" 
+                :key="i"
+                :dischiObject="element"
+            />
+        </div>
     </div>
 </template>
 
@@ -64,6 +69,12 @@ export default {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
+    }
+
+    #selector {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
     }
 
 </style>
