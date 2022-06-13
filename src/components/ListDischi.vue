@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <div>
-            <MySearch/>
+            <MySearch @selected="selectUser"/>
         </div>
         <MyDisco
-            v-for="(element, i) in dischi" 
+            v-for="(element, i) in filtroGeneri" 
             :key="i"
             :dischiObject="element"
         />
@@ -25,15 +25,32 @@ export default {
   data () {
       return {
           apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
-          dischi: []
+          dischi: [],
+          selected: ''
       }
   },
   created() {
       axios.get(this.apiUrl)
       .then(result => {
           this.dischi = result.data.response;
-          console.log(result);
+          console.log(result)
       })
+  },
+  computed: {
+    filtroGeneri() {
+        if (this.selected === "all") {
+            return this.dischi
+        }
+        return this.dischi.filter((item) => {
+            return item.genre.includes(this.selected)
+        })
+    }
+  },
+
+  methods: {
+    selectUser(selezione){
+        this.selected = selezione
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <select id="generi" name="" form="">
-            <option value="All">All</option>
+        <select id="generi" name="" form=""  v-model="userSelect" @click.prevent="$emit('selected', userSelect)">
+            <option value="all">All</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
             <option value="Jazz">Jazz</option>
@@ -16,7 +16,7 @@ export default {
   name: 'MySearch',
     data () {
       return {
-          
+          userSelect: "",
       }
   },
   created() {
